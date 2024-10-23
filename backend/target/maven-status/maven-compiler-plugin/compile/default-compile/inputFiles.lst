@@ -1,0 +1,15 @@
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\GeminiResponse.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\StockChart.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\service\GeminiAiService.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\config\RestTemplateConfig.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\StockChartData.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\NewsArticleResponse.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\controller\StockChartController.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\NewsArticle.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\controller\GeminiController.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\service\StockChartService.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\GeminiRequest.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\Insight.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\model\Publisher.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\service\NewsService.java
+C:\Users\dagge\Documents\Code\stock-analysis-platform\backend\src\main\java\com\jkimcoding\stock_analysis_platform\StockAnalyzerMain.java

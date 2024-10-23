@@ -1,68 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*
+This app is built using Tailwind UI, a component
+library that extends Tailwind CSS, a utility-first CSS
+framework designed for rapid UI development.
+
+Tailwind UI provides a collection of pre-built,
+customizable components like buttons, forms, modals,
+and more, enabling developers to create modern and
+responsive interfaces with minimal effort.
+
+It offers flexibility, allowing components to be
+tailored to fit any design while maintaining consistency
+and responsiveness across devices.
+
+https://tailwindui.com/
+https://nerdcave.com/tailwind-cheat-sheet
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+ */
+
+
 :root {
+  /* TODO: Customize font here! */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+  /* Font color */
+  color: #434343;
+  height: 100%;
+  width: 100%;
   margin: 0;
+
+  background-color: #ffffff;
+}
+
+html,
+body {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  flex-grow: 1;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+input {
+  border-color: #2F2D76!important;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+input:focus {
+  border-color: #2F2D76!important;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip {
+  background-color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  justify-content: stretch;
+}
+
+.bg-light-gray{
+  background-color: #636e72!important;
+}
+.bg-gray {
+  background-color: #2d3436!important;
+}
+
+.bg-blue {
+  background-color: #2F2D76!important;
+}
+
+.p-top {
+  padding-top: 0.25rem;
+}
+
+/**************************************************************
+************************** Chart CSS **************************
+***************************************************************/
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.hover-info {
+  margin-top: 20px;
+  position: absolute;
+  z-index: 100;
+}
+
+.dot:hover {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  fill: #2d3436;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.ticker-background {
+  background-color: #2d3436;
+  color: #ffffff;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  margin-left: 1rem;
+}
+
+textarea:focus{
+  border-color: #2F2D76!important;
+}
+
+.bg-yellow-500 {
+  background-color: #FCD230!important;
+}
+
+
+.selected-date {
+  color: #2d3436;
+  margin: 4rem;
+}
+
+.description-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+}
+
+.description-header {
+  color: #1e3799;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.description-subheader {
+  color: #079992;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.green-color {
+  color: #079992;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+.tech-stack {
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+}
+.tech-stack ul {
+  padding: 0;
+}
+.tech-stack ul li {
+  margin-bottom: 5px;
+}
+a {
+  color: #1a73e8;
+}
+
+
+/*DO NOT TOUCH!!!*/
+[type='text']:focus, input:where(:not([type])):focus,
+[type='email']:focus, [type='url']:focus,
+[type='password']:focus, [type='number']:focus,
+[type='date']:focus, [type='datetime-local']:focus,
+[type='month']:focus, [type='search']:focus,
+[type='tel']:focus, [type='time']:focus,
+[type='week']:focus, [multiple]:focus,
+textarea:focus, select:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2F2D76!important;
+  --tw-ring-shadow: 0!important;
+  border-color: #2F2D76!important;
 }

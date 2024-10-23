@@ -1,0 +1,15 @@
+com\jkimcoding\stock_analysis_platform\model\GeminiRequest.class
+com\jkimcoding\stock_analysis_platform\service\GeminiAiService.class
+com\jkimcoding\stock_analysis_platform\model\NewsArticle.class
+com\jkimcoding\stock_analysis_platform\controller\GeminiController.class
+com\jkimcoding\stock_analysis_platform\model\Insight.class
+com\jkimcoding\stock_analysis_platform\service\NewsService.class
+com\jkimcoding\stock_analysis_platform\model\StockChartData.class
+com\jkimcoding\stock_analysis_platform\service\StockChartService.class
+com\jkimcoding\stock_analysis_platform\config\RestTemplateConfig.class
+com\jkimcoding\stock_analysis_platform\StockAnalyzerMain.class
+com\jkimcoding\stock_analysis_platform\controller\StockChartController.class
+com\jkimcoding\stock_analysis_platform\model\GeminiResponse.class
+com\jkimcoding\stock_analysis_platform\model\NewsArticleResponse.class
+com\jkimcoding\stock_analysis_platform\model\Publisher.class
+com\jkimcoding\stock_analysis_platform\model\StockChart.class
