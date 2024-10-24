@@ -7,33 +7,35 @@ import SearchBar from "./components/SearchBar.jsx";
 import NavBar from "./components/NavBar.jsx";
 
 const gResponse = {
-    "overallSentiment": "Neutral",
-    "keyDrivers": [
-        "Production ramp-up at Gigafactory Texas",
-        "Cybertruck launch and production plans",
-        "Tesla's pricing strategy and demand",
-        "Competition from other EV manufacturers",
-        "Elon Musk's influence and social media activity",
-        "Regulatory and policy changes impacting the EV industry",
-        "Overall economic conditions and market sentiment"
-    ],
-    "positiveSentiment": [
-        "News of production ramp-up at Gigafactory Texas, suggesting strong demand for Tesla vehicles and potential for increased revenue",
-        "Positive investor reactions to Cybertruck launch and production plans, hinting at excitement for the new model and its potential impact",
-        "Tesla's strong sales figures and market share in the EV market"
-    ],
-    "negativeSentiment": [
-        "Concerns regarding Tesla's pricing strategy and its impact on demand",
-        "Growing competition from other EV manufacturers such as Rivian and Lucid Motors",
-        "Elon Musk's volatile tweets and pronouncements, potentially creating market uncertainty"
-    ],
-    "newsHighlights": [
-        "Tesla announces production ramp-up at Gigafactory Texas, boosting EV output and signaling increased demand",
-        "Cybertruck production plans take shape, generating excitement and anticipation among investors and consumers",
-        "Tesla faces rising competition from other EV manufacturers, intensifying the battle for market share",
-        "Elon Musk's social media activity continues to influence Tesla's stock performance"
-    ],
-    "overallSummary": "TSLA stock has been experiencing mixed signals. While positive developments such as production ramp-up at Gigafactory Texas and Cybertruck production plans are generating optimism, concerns about pricing strategy and competition from other EV manufacturers are creating some market uncertainty. Elon Musk's social media activity continues to be a significant factor, potentially both driving and dampening investor sentiment. Overall, the stock's performance remains dependent on a balance between positive news and potential challenges within the rapidly evolving EV landscape."
+    "data": {
+        "overallSentiment": "Neutral",
+        "keyDrivers": [
+            "Production ramp-up at Gigafactory Texas",
+            "Cybertruck launch and production plans",
+            "Tesla's pricing strategy and demand",
+            "Competition from other EV manufacturers",
+            "Elon Musk's influence and social media activity",
+            "Regulatory and policy changes impacting the EV industry",
+            "Overall economic conditions and market sentiment"
+        ],
+        "positiveSentiment": [
+            "News of production ramp-up at Gigafactory Texas, suggesting strong demand for Tesla vehicles and potential for increased revenue",
+            "Positive investor reactions to Cybertruck launch and production plans, hinting at excitement for the new model and its potential impact",
+            "Tesla's strong sales figures and market share in the EV market"
+        ],
+        "negativeSentiment": [
+            "Concerns regarding Tesla's pricing strategy and its impact on demand",
+            "Growing competition from other EV manufacturers such as Rivian and Lucid Motors",
+            "Elon Musk's volatile tweets and pronouncements, potentially creating market uncertainty"
+        ],
+        "newsHighlights": [
+            "Tesla announces production ramp-up at Gigafactory Texas, boosting EV output and signaling increased demand",
+            "Cybertruck production plans take shape, generating excitement and anticipation among investors and consumers",
+            "Tesla faces rising competition from other EV manufacturers, intensifying the battle for market share",
+            "Elon Musk's social media activity continues to influence Tesla's stock performance"
+        ],
+        "overallSummary": "TSLA stock has been experiencing mixed signals. While positive developments such as production ramp-up at Gigafactory Texas and Cybertruck production plans are generating optimism, concerns about pricing strategy and competition from other EV manufacturers are creating some market uncertainty. Elon Musk's social media activity continues to be a significant factor, potentially both driving and dampening investor sentiment. Overall, the stock's performance remains dependent on a balance between positive news and potential challenges within the rapidly evolving EV landscape."
+    }
 }
 
 const App = () => {
@@ -76,13 +78,12 @@ const App = () => {
             setSuggestions([]);
         }
     };
-
+    const isDemo = true;
     const fetchStockChartByTicker = async (ticker) => {
         setStockChartLoading(true);
         setError(null);
         try {
-            //const response = await getData(`/api/v1/stock-chart?symbol=${ticker}`);
-            const response = dummyStockChartData;
+            const response = isDemo?dummyStockChartData:await getData(`/api/v1/stock-chart?symbol=${ticker}`);
             const parsedData = parseStockChartData(response.data);
             setStockChartData(parsedData);
         } catch (error) {
@@ -115,15 +116,14 @@ const App = () => {
         setGeminiLoading(true)
         if (selectedCompany && fromDate && toDate) {
             try {
-                /*const response = await postData('/api/v1/ask-gemini', {
+                const response = isDemo?gResponse: await postData('/api/v1/ask-gemini', {
                     symbol: selectedCompany.ticker,
                     fromDate: formatDate(fromDate),
                     toDate: formatDate(toDate),
                     stockChartData: filterByDateRange(stockChartData)
-                });*/
-                const response = gResponse;
+                });
                 //console.log("GEMINI RESPONSE:", response.data)
-                setGeminiResponse(response);
+                setGeminiResponse(response.data);
             } catch (error) {
                 console.error('Error during analysis:', error);
             } finally {
@@ -160,9 +160,10 @@ const App = () => {
                     )}
                     {!stockChartLoading && stockChartData && (
                         <>
+                            {isDemo &&
                             <h1>
                                 The responses are demo only.
-                            </h1>
+                            </h1>}
                             <StockChart
                                 stockChartData={stockChartData}
                                 fromDate={fromDate}

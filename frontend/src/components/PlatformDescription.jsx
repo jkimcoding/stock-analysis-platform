@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Diagram from "../images/ApplicationVisualization.png"
+import Diagram from "../images/ApplicationFunctionalityVisualization.png"
 import Search from "../images/Search.gif"
 import RenderChart from "../images/RenderChart.gif"
 import SelectDates from "../images/SelectDates.gif"
@@ -51,21 +51,23 @@ const PlatformDescription = () => {
                 <h3 className="description-subheader">1. Data Collection</h3>
                 <ul>
                     <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Stock Data API:</strong> The Alpha
-                        Vantage Finance API will be utilized to collect stock data
+                        Vantage Finance API will be utilized to collect stock data.
                     </li>
                     <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Stock Market API:</strong> Fetch
-                        additional data like P/E ratio from the Alpha Vantage API.
+                        additional data including open price, highest price, lowest price, close price, volume.
                     </li>
                 </ul>
 
 
                 <h3 className="description-subheader">2. Data Analysis</h3>
                 <ul>
+                    <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Retrieve News Articles:</strong> News articles between the time period are obtained through the Polygon.io API.
+                    </li>
                     <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Give Prompt:</strong> Ask Gemini AI
                         to analyze the stock prices using a prompt.
                     </li>
                     <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Receive Analysis:</strong> When the
-                        analysis is formed, the application will receive it for reporting.
+                        analysis is formed, the application will receive it and include the retrieved news articles for reporting.
                     </li>
                 </ul>
 
@@ -130,11 +132,11 @@ const PlatformDescription = () => {
                             <img src={Search} width={1000} style={{width: '60%', height: 'auto'}}/>
                         </div>
                     </li>
-                    <li><strong className="green-color">3. Ask for Data:</strong> Request stock data from Alphavantage
+                    <li><strong className="green-color">3. Request Data:</strong> Request stock data from Alphavantage
                         API at <a
                             href="https://www.alphavantage.co/documentation/#dailyadj">https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=[ticker]&outputsize=compact&apikey=[apiKey]</a>.
                     </li>
-                    <li><strong className="green-color">4. Receive Data:</strong> Get stock data from Alphavantage API.
+                    <li><strong className="green-color">4. Receive Data:</strong> Alphavantage API sends stock data to the backend.
                     </li>
                     <li><strong className="green-color">5. Send Data:</strong> Send the stock data to the frontend.
                     </li>
@@ -152,11 +154,16 @@ const PlatformDescription = () => {
                     <li><strong className="green-color">8. Click Analyze:</strong> Ask the application to analyze the
                         stocks.
                     </li>
-                    <li><strong className="green-color">9. Retrieve News Articles:</strong> Request news articles from
+                    <li><strong className="green-color">9. Request News Articles:</strong> Request news articles from
                         Polygon.io between time period at <a
                             href="https://polygon.io/docs/stocks/get_v2_reference_news">https://api.polygon.io/v2/reference/news?ticker=[ticker]&apiKey=[apiKey]&published_utc.gte=[fromDate]&published_utc.lte=[toDate]</a>.
                     </li>
-                    <li><strong className="green-color">10. Build Prompt:</strong> Create a prompt using the given stock chart data, news article.
+                    <li><strong className="green-color">10. Receive News Articles:</strong> Polygon.io API sends the news articles to the backend.
+                    </li>
+                    <li><strong className="green-color">11. Build Prompt:</strong> Create a prompt using the given stock
+                        chart data, news article.
+                        <br/>
+                        <br/>
                         <p>
                             The prompt will be created with the following structure:
                         </p>
@@ -164,14 +171,16 @@ const PlatformDescription = () => {
                             <img src={PromptCode} width={1000} style={{width: '60%', height: 'auto'}}/>
                         </div>
                     </li>
-                    <li><strong className="green-color">11. Ask Gemini for Analysis:</strong> Give Gemini a prompt for
-                        the analysis at <a href="https://ai.google.dev/gemini-api/docs">https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=[apiKey]</a>
+                    <br/>
+                    <li><strong className="green-color">12. Ask Gemini for Analysis:</strong> Give Gemini a prompt for
+                        the analysis at <a
+                            href="https://ai.google.dev/gemini-api/docs">https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=[apiKey]</a>.
                     </li>
-                    <li><strong className="green-color">12. Receive Analysis:</strong> Get the analysis from Gemini.
+                    <li><strong className="green-color">13. Receive Analysis:</strong> Get the analysis from Gemini.
                     </li>
-                    <li><strong className="green-color">13. Send Analysis:</strong> Send the analysis to the frontend.
+                    <li><strong className="green-color">14. Send Analysis:</strong> Send the analysis to the frontend.
                     </li>
-                    <li><strong className="green-color">14. Present Information:</strong> Put the analysis on the screen
+                    <li><strong className="green-color">15. Present Information:</strong> Put the analysis and news articles on the screen
                         to show.
                         <div>
                             <img src={Analysis} width={1000} style={{width: '60%', height: 'auto'}}/>
@@ -182,10 +191,10 @@ const PlatformDescription = () => {
 
 
             <section className="section">
-                <h1 className="description-header">Application Visualization</h1>
+                <h1 className="description-header">Application Functionality Visualization with Frontend, Backend, and APIs</h1>
                 <br/>
                 <div>
-                    <img src={Diagram} width={1000} style={{width: '60%', height: 'auto'}}/>
+                    <img src={Diagram} width={1000} style={{width: '80%', height: 'auto'}}/>
                 </div>
             </section>
 
