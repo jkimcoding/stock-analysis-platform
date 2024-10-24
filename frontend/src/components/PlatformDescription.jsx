@@ -50,7 +50,7 @@ const PlatformDescription = () => {
                 <h1 className="description-header">Architecture and Functionality Overview</h1>
                 <h3 className="description-subheader">1. Data Collection</h3>
                 <ul>
-                    <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Stock Market Data API:</strong> The Alpha Vantage Finance API will be utilized to fetch daily stock data for a given ticker including open price, highest price, lowest price, close price, volume.
+                    <li style={{listStyleType: 'disc', marginLeft: '20px'}}><strong>Stock Market Data API:</strong> The Alpha Vantage Finance API will be utilized to fetch daily stock data for a given ticker including open price, highest price, lowest price, close price, and volume.
                     </li>
                 </ul>
 
