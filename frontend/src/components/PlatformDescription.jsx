@@ -39,7 +39,7 @@ const PlatformDescription = () => {
                 <h1 className="description-header">Purpose</h1>
                 <p>
                     This application is intended for people learning about stocks and people needing information about
-                    stocks, especially high school students by presenting the elements that influence stock prices.
+                    stocks, especially high school students through presenting the elements that influence stock prices.
                     By introducing stocks in a more approachable way, people, especially of the younger generations, can
                     be more financially literate.
                 </p>
