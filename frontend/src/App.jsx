@@ -162,7 +162,7 @@ const App = () => {
                         <>
                             {isDemo &&
                             <h1>
-                                The responses are demo only.
+                                For demonstration purposes, the data displayed here is using dummy content instead of data from actual APIs.
                             </h1>}
                             <StockChart
                                 stockChartData={stockChartData}
